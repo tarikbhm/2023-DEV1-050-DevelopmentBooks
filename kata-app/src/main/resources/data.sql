@@ -1,0 +1,5 @@
+INSERT INTO book (title, author, `price`, `year_release`, `img_url`) VALUES ('Clean Code', 'Robert Martin', 50, 2008, 'https://github.com/stephane-genicot/katas/raw/master/images/Kata_DevelopmentBooks_CleanCode.png');
+INSERT INTO book (title, author, `price`, `year_release`, `img_url`) VALUES ('The Clean Coder', 'Robert Martin', 50,  2011, 'https://github.com/stephane-genicot/katas/raw/master/images/Kata_DevelopmentBooks_CleanCoder.png');
+INSERT INTO book (title, author, `price`, `year_release`, `img_url`) VALUES ('Clean Architecture', 'Robert Martin', 50, 2017, 'https://github.com/stephane-genicot/katas/raw/master/images/Kata_DevelopmentBooks_CleanArchitecture.jpeg');
+INSERT INTO book (title, author, `price`, `year_release`, `img_url`) VALUES ('Test Driven Development by Example', 'Kent Beck', 50, 2003, 'https://github.com/stephane-genicot/katas/raw/master/images/Kata_DevelopmentBooks_TDD.jpeg');
+INSERT INTO book (title, author, `price`, `year_release`, `img_url`) VALUES ('Working Effectively With Legacy Code', 'Michael C. Feathers', 50 , 2004, 'https://github.com/stephane-genicot/katas/raw/master/images/Kata_DevelopmentBooks_Refactoring.jpeg');
