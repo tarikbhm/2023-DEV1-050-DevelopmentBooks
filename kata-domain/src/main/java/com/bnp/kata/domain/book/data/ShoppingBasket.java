@@ -1,5 +1,6 @@
 package com.bnp.kata.domain.book.data;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 

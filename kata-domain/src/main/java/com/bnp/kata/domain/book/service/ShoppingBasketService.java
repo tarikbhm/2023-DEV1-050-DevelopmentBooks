@@ -7,5 +7,10 @@ import java.util.List;
 
 public interface ShoppingBasketService {
 
+    /**
+     * calculate the price for a list books and quantities
+     * @param bookRequests
+     * @return price
+     */
     BigDecimal calculatePrice(List<ShoppingBasket> bookRequests);
 }

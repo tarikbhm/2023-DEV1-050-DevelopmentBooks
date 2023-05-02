@@ -48,7 +48,7 @@ public class StandardShoppingBasketServiceTest {
         //run
         BigDecimal result = shoppingBasketService.calculatePrice(bookRequests);
         //check
-        assertEquals(BigDecimal.valueOf(50), result);
+        assertEquals(0, BigDecimal.valueOf(50).compareTo(result));
     }
 
     /*
@@ -62,8 +62,8 @@ public class StandardShoppingBasketServiceTest {
         shoppingBasket.setQuantity(1);
 
         ShoppingBasket shoppingBasket2 = new ShoppingBasket();
-        shoppingBasket.setBookId(2L);
-        shoppingBasket.setQuantity(1);
+        shoppingBasket2.setBookId(2L);
+        shoppingBasket2.setQuantity(1);
 
         List<ShoppingBasket> bookRequests = List.of(
                 shoppingBasket,
@@ -89,7 +89,7 @@ public class StandardShoppingBasketServiceTest {
         //run
         BigDecimal result = shoppingBasketService.calculatePrice(bookRequests);
         //check
-        assertEquals(BigDecimal.valueOf(95), result);
+        assertEquals(0, BigDecimal.valueOf(95).compareTo(result));
     }
 
     /*
@@ -103,12 +103,12 @@ public class StandardShoppingBasketServiceTest {
         shoppingBasket.setQuantity(1);
 
         ShoppingBasket shoppingBasket2 = new ShoppingBasket();
-        shoppingBasket.setBookId(2L);
-        shoppingBasket.setQuantity(1);
+        shoppingBasket2.setBookId(2L);
+        shoppingBasket2.setQuantity(1);
 
         ShoppingBasket shoppingBasket3 = new ShoppingBasket();
-        shoppingBasket.setBookId(3L);
-        shoppingBasket.setQuantity(1);
+        shoppingBasket3.setBookId(3L);
+        shoppingBasket3.setQuantity(1);
 
         List<ShoppingBasket> bookRequests = List.of(
                 shoppingBasket,
@@ -143,7 +143,7 @@ public class StandardShoppingBasketServiceTest {
         //run
         BigDecimal result = shoppingBasketService.calculatePrice(bookRequests);
         //check
-        assertEquals(BigDecimal.valueOf(135), result);
+        assertEquals(0, BigDecimal.valueOf(135).compareTo(result));
     }
 
     /*
@@ -157,16 +157,16 @@ public class StandardShoppingBasketServiceTest {
         shoppingBasket.setQuantity(1);
 
         ShoppingBasket shoppingBasket2 = new ShoppingBasket();
-        shoppingBasket.setBookId(2L);
-        shoppingBasket.setQuantity(1);
+        shoppingBasket2.setBookId(2L);
+        shoppingBasket2.setQuantity(1);
 
         ShoppingBasket shoppingBasket3 = new ShoppingBasket();
-        shoppingBasket.setBookId(3L);
-        shoppingBasket.setQuantity(1);
+        shoppingBasket3.setBookId(3L);
+        shoppingBasket3.setQuantity(1);
 
         ShoppingBasket shoppingBasket4 = new ShoppingBasket();
-        shoppingBasket.setBookId(4L);
-        shoppingBasket.setQuantity(1);
+        shoppingBasket4.setBookId(4L);
+        shoppingBasket4.setQuantity(1);
 
         List<ShoppingBasket> bookRequests = List.of(
                 shoppingBasket,
@@ -210,7 +210,7 @@ public class StandardShoppingBasketServiceTest {
         //run
         BigDecimal result = shoppingBasketService.calculatePrice(bookRequests);
         //check
-        assertEquals(BigDecimal.valueOf(160), result);
+        assertEquals(0, BigDecimal.valueOf(160).compareTo(result));
     }
     /*
     If you go for the whole hog, and buy all 5, you get a huge 25% discount.
@@ -223,20 +223,20 @@ public class StandardShoppingBasketServiceTest {
         shoppingBasket.setQuantity(1);
 
         ShoppingBasket shoppingBasket2 = new ShoppingBasket();
-        shoppingBasket.setBookId(2L);
-        shoppingBasket.setQuantity(1);
+        shoppingBasket2.setBookId(2L);
+        shoppingBasket2.setQuantity(1);
 
         ShoppingBasket shoppingBasket3 = new ShoppingBasket();
-        shoppingBasket.setBookId(3L);
-        shoppingBasket.setQuantity(1);
+        shoppingBasket3.setBookId(3L);
+        shoppingBasket3.setQuantity(1);
 
         ShoppingBasket shoppingBasket4 = new ShoppingBasket();
-        shoppingBasket.setBookId(4L);
-        shoppingBasket.setQuantity(1);
+        shoppingBasket4.setBookId(4L);
+        shoppingBasket4.setQuantity(1);
 
         ShoppingBasket shoppingBasket5 = new ShoppingBasket();
-        shoppingBasket.setBookId(5L);
-        shoppingBasket.setQuantity(1);
+        shoppingBasket5.setBookId(5L);
+        shoppingBasket5.setQuantity(1);
 
         List<ShoppingBasket> bookRequests = List.of(
                 shoppingBasket,
@@ -289,7 +289,7 @@ public class StandardShoppingBasketServiceTest {
         //run
         BigDecimal result = shoppingBasketService.calculatePrice(bookRequests);
         //check
-        assertEquals(BigDecimal.valueOf(187.50), result);
+        assertEquals(0, BigDecimal.valueOf(187.50).compareTo(result));
     }
     /*
     Note that if you buy, say, 4 books, of which 3 are different titles, you get a 10% discount on the 3 that form part of a set, but the 4th book still costs 50 EUR
@@ -302,16 +302,16 @@ public class StandardShoppingBasketServiceTest {
         shoppingBasket.setQuantity(1);
 
         ShoppingBasket shoppingBasket2 = new ShoppingBasket();
-        shoppingBasket.setBookId(2L);
-        shoppingBasket.setQuantity(1);
+        shoppingBasket2.setBookId(2L);
+        shoppingBasket2.setQuantity(1);
 
         ShoppingBasket shoppingBasket3 = new ShoppingBasket();
-        shoppingBasket.setBookId(3L);
-        shoppingBasket.setQuantity(1);
+        shoppingBasket3.setBookId(3L);
+        shoppingBasket3.setQuantity(1);
 
         ShoppingBasket shoppingBasket4 = new ShoppingBasket();
-        shoppingBasket.setBookId(3L);
-        shoppingBasket.setQuantity(1);
+        shoppingBasket4.setBookId(3L);
+        shoppingBasket4.setQuantity(1);
 
         List<ShoppingBasket> bookRequests = List.of(
                 shoppingBasket,
@@ -344,20 +344,12 @@ public class StandardShoppingBasketServiceTest {
                         .price(BigDecimal.valueOf(50))
                         .build()
         ));
-        Mockito.when(bookSPI.findBookById(4L)).thenReturn(Optional.of(
-                Book.builder()
-                        .id(4L)
-                        .title("Book 4")
-                        .author("Author 4")
-                        .price(BigDecimal.valueOf(50))
-                        .build()
-        ));
 
         //run
         BigDecimal result = shoppingBasketService.calculatePrice(bookRequests);
 
         //check
-        assertEquals(BigDecimal.valueOf(165), result);
+        assertEquals(0, BigDecimal.valueOf(185).compareTo(result));
     }
 
     /*
@@ -376,20 +368,20 @@ public class StandardShoppingBasketServiceTest {
         shoppingBasket.setQuantity(2);
 
         ShoppingBasket shoppingBasket2 = new ShoppingBasket();
-        shoppingBasket.setBookId(2L);
-        shoppingBasket.setQuantity(2);
+        shoppingBasket2.setBookId(2L);
+        shoppingBasket2.setQuantity(2);
 
         ShoppingBasket shoppingBasket3 = new ShoppingBasket();
-        shoppingBasket.setBookId(3L);
-        shoppingBasket.setQuantity(2);
+        shoppingBasket3.setBookId(3L);
+        shoppingBasket3.setQuantity(2);
 
         ShoppingBasket shoppingBasket4 = new ShoppingBasket();
-        shoppingBasket.setBookId(4L);
-        shoppingBasket.setQuantity(1);
+        shoppingBasket4.setBookId(4L);
+        shoppingBasket4.setQuantity(1);
 
         ShoppingBasket shoppingBasket5 = new ShoppingBasket();
-        shoppingBasket.setBookId(5L);
-        shoppingBasket.setQuantity(1);
+        shoppingBasket5.setBookId(5L);
+        shoppingBasket5.setQuantity(1);
 
         List<ShoppingBasket> bookRequests = List.of(
                 shoppingBasket,
@@ -442,6 +434,6 @@ public class StandardShoppingBasketServiceTest {
         //run
         BigDecimal result = shoppingBasketService.calculatePrice(bookRequests);
         //check
-        assertEquals(BigDecimal.valueOf(187.50), result);
+        assertEquals(0, BigDecimal.valueOf(320).compareTo(result));
     }
 }

@@ -6,5 +6,9 @@ import java.util.List;
 
 public interface BookDomainService {
 
+    /**
+     * get all books
+     * @return book list
+     */
     List<Book> getBooks();
 }
